@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
-import org.testng.annotations.Test; 
+import org.testng.annotations.Test;
 
 import com.crm.qa.base.TestBase;
 import com.crm.qa.pages.HomePage;
@@ -39,10 +39,10 @@ public class LoginPageTest extends TestBase {
 		boolean flag = login.validateCRMLogo();
 		Assert.assertTrue(flag);
 	}
-	
+
 	@Test(priority = 3)
 	public void verify_Login() {
-		home =login.login(pr.getProperty("username"), pr.getProperty("password"));
+		home = login.login(pr.getProperty("username"), pr.getProperty("password"));
 	}
 
 	@AfterMethod

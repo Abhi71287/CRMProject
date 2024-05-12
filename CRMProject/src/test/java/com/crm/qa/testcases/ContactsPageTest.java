@@ -1,5 +1,6 @@
 package com.crm.qa.testcases;
 
+
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -58,6 +59,7 @@ public class ContactsPageTest extends TestBase {
 
 	}
 
+	
 	@AfterMethod
 	public void tearDown() {
 		driver.quit();
