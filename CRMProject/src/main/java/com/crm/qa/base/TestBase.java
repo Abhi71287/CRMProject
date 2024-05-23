@@ -49,15 +49,15 @@ public class TestBase {
 		}
 		
 		eventListener = new WebEventListener();
-		EventFiringDecorator<WebDriver> e_driver = new EventFiringDecorator<WebDriver>(eventListener);
-		WebDriver decoratedDriver = e_driver.decorate(driver);
-		driver =decoratedDriver;
+		WebDriver decoratedDriver = new EventFiringDecorator<>(eventListener).decorate(driver);
 		
-		driver.manage().window().maximize();
-		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().pageLoadTimeout(TestUtils.PAGE_LOAD_TIME_OUT, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(TestUtils.IMPLICIT_WAIT,TimeUnit.SECONDS);
-		driver.get(pr.getProperty("url"));
+		
+		
+		decoratedDriver.manage().window().maximize();
+		decoratedDriver.manage().deleteAllCookies();
+		decoratedDriver.manage().timeouts().pageLoadTimeout(TestUtils.PAGE_LOAD_TIME_OUT, TimeUnit.SECONDS);
+		decoratedDriver.manage().timeouts().implicitlyWait(TestUtils.IMPLICIT_WAIT,TimeUnit.SECONDS);
+		decoratedDriver.get(pr.getProperty("url"));
 		
 		
 	}
